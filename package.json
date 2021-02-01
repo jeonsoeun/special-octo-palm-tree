@@ -1,0 +1,8 @@
+{
+  "name": "esm-react",
+  "version": "1.0.0",
+  "description": "esm으로 react 예제를 만든다",
+  "main": "index.html",
+  "author": "Soeun Jun <jse525@naver.com>",
+  "license": "MIT"
+}
