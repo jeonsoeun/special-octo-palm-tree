@@ -4,5 +4,10 @@
   "description": "esm으로 react 예제를 만든다",
   "main": "index.html",
   "author": "Soeun Jun <jse525@naver.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "typescript": "^4.1.3"
+  }
 }
