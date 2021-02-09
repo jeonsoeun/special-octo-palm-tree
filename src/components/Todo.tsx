@@ -1,6 +1,6 @@
 /** @format */
 
-import TodoItem from "./TodoItem.js";
+import TodoItem from "./TodoItem";
 import React, { useState } from "react";
 
 const Todo = () => {

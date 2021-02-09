@@ -1,8 +1,8 @@
 /** @format */
 
 import React from "react";
-import Welcome from "./components/Welcome.js";
-import TodoList from "./components/Todo.js";
+import Welcome from "./components/Welcome";
+import TodoList from "./components/Todo";
 
 const App = () => {
   return (
