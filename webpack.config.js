@@ -29,6 +29,19 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader", // webpack 5 이전 방식
+            // type: "asset/resource", // webpack 5 이후 방식
+            options: {
+              name: "[name].[contenthash].[ext]",
+            },
+          },
+        ],
+      },
+
+      {
         test: /\.ts(x)?$/,
         use: "ts-loader",
         exclude: /node_modules/,

@@ -9,6 +9,9 @@
   h1 {
     color: steelblue;
   }
+  img {
+    max-width: 200px;
+  }
 }
 
 @import "./todoList";
