@@ -10,6 +10,7 @@ const App = () => {
       <h1>hello</h1>
       <Welcome message="Welcome" />
       <TodoList />
+      <div>{__VERSION__}</div>
     </div>
   );
 };

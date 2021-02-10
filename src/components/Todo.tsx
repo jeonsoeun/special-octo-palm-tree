@@ -31,8 +31,8 @@ const Todo = () => {
         <button onClick={onclick}>입력</button>
       </div>
       <div className="todo-list">
-        {todoList.map((v) => {
-          return <TodoItem todoItem={v} />;
+        {todoList.map((v, i) => {
+          return <TodoItem key={i} todoItem={v} />;
         })}
       </div>
     </div>
