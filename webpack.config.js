@@ -40,7 +40,17 @@ const config = {
           },
         ],
       },
-
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "file-loader",
+          },
+          {
+            loader: "svgo-loader",
+          },
+        ],
+      },
       {
         test: /\.ts(x)?$/,
         use: "ts-loader",
