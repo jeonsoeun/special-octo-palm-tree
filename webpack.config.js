@@ -30,19 +30,35 @@ const config = {
     rules: [
       {
         test: /\.(png|jpe?g|gif)$/i,
-        type: "asset/resource", // webpack 5 이후 방식
-        // use: [// loader: "file-loader", // webpack 5 이전 방식
-        //   {
-        //     options: {
-        //       name: "[name].[contenthash].[ext]",
-        //     },
-        //   },
-        // ],
+        // type: "asset/resource", // webpack 5 이후 방식
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          },
+          {
+            loader: "file-loader", // webpack 5 이전 방식
+            options: {
+              name: "[name].[contenthash].[ext]",
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,
-        type: "asset/inline",
+        //type: "asset/inline",
         use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+            },
+          },
+          {
+            loader: "file-loader",
+          },
           {
             loader: "svgo-loader",
           },
