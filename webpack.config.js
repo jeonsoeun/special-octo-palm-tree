@@ -30,35 +30,12 @@ const config = {
     rules: [
       {
         test: /\.(png|jpe?g|gif)$/i,
-        // type: "asset/resource", // webpack 5 이후 방식
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192,
-            },
-          },
-          {
-            loader: "file-loader", // webpack 5 이전 방식
-            options: {
-              name: "[name].[contenthash].[ext]",
-            },
-          },
-        ],
+        type: "asset/resource", // webpack 5 이후 방식
       },
       {
         test: /\.svg$/,
-        //type: "asset/inline",
+        type: "asset/inline",
         use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192,
-            },
-          },
-          {
-            loader: "file-loader",
-          },
           {
             loader: "svgo-loader",
           },
@@ -116,6 +93,19 @@ const config = {
     }),
     new MiniCssExtractPlugin(),
   ],
+  optimization: {
+    minimize: !isDev,
+    // minimizer: [new TerserPlugin({})] // minimizer에서 가장 유명한 플러그인.
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
+  },
 };
 
 module.exports = config;
