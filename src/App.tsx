@@ -3,7 +3,7 @@
 import React from "react";
 import Welcome from "./components/Welcome";
 import TodoList from "./components/Todo";
-import "./style/main.css";
+import "./style/main.scss";
 
 const App = () => {
   return (

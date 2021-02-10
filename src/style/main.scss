@@ -1,0 +1,14 @@
+/** @format */
+
+#root {
+  text-align: center;
+}
+.main {
+  margin: auto;
+  max-width: 1300px;
+  h1 {
+    color: steelblue;
+  }
+}
+
+@import "./todoList";
