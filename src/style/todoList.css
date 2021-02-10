@@ -1,0 +1,13 @@
+/** @format */
+
+.todo-list {
+  padding: 20px 10px;
+}
+.todo-item {
+  border: 1px #d0d0d0 solid;
+  padding: 5px;
+}
+.todo-item input,
+.todo-item span {
+  margin-right: 10px;
+}

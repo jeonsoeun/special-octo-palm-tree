@@ -3,6 +3,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const isDev = process.env.NODE_ENV !== "production";
 const pkg = require("./package.json");
 const webpack = require("webpack");
@@ -33,7 +34,24 @@ const config = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css?$/,
+        test: /\.css|scss|sass/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              modules: {
+                auto: true,
+                localIdentName: isDev
+                  ? "[path][name]__[local]"
+                  : "[hash:base64]",
+              },
+            },
+          },
+        ],
       },
     ],
   },
@@ -54,6 +72,7 @@ const config = {
       "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
       __VERSION__: JSON.stringify(pkg.version),
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
 
