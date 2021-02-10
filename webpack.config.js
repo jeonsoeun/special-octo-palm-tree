@@ -30,22 +30,19 @@ const config = {
     rules: [
       {
         test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: "file-loader", // webpack 5 이전 방식
-            // type: "asset/resource", // webpack 5 이후 방식
-            options: {
-              name: "[name].[contenthash].[ext]",
-            },
-          },
-        ],
+        type: "asset/resource", // webpack 5 이후 방식
+        // use: [// loader: "file-loader", // webpack 5 이전 방식
+        //   {
+        //     options: {
+        //       name: "[name].[contenthash].[ext]",
+        //     },
+        //   },
+        // ],
       },
       {
         test: /\.svg$/,
+        type: "asset/inline",
         use: [
-          {
-            loader: "file-loader",
-          },
           {
             loader: "svgo-loader",
           },
