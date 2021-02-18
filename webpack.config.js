@@ -19,7 +19,7 @@ const config = {
     // 개발 서버 열어줌. 수정되면 자동으로 새로고침까지 해줌.
     contentBase: path.join(__dirname, ''),
     compress: !isDev, // 압축 여부.
-    port: 8080,
+    port: 3000,
   },
   devtool: isDev ? 'inline-source-map' : 'source-map', // 소스맵이 있으면 원본 소스를 볼 수 있다. 디버깅 할 때 편리해짐.
   entry: './src/index.tsx', // 빌드 시작파일.
