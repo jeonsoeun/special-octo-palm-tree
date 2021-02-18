@@ -1,6 +1,6 @@
 /** @format */
 
-declare var __VERSION__: string;
+declare let __VERSION__: string;
 
-declare module "*.png";
-declare module "*.svg";
+declare module '*.png';
+declare module '*.svg';
